@@ -10,7 +10,7 @@ inputs = {
   vpc_id = dependency.vpc.outputs.vpc_id
   igw_id = dependency.vpc.outputs.igw_id
   ipv4_cidr_block = dependency.vpc.outputs.vpc_cidr_block
-  availability_zones = ["af-south-1a", "af-south-1b", "af-south-1c"]
+  availability_zones = var.availability_zones
 }
 
 dependency "vpc" {
