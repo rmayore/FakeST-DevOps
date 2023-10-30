@@ -25,7 +25,7 @@ dependency "vpc" {
   mock_outputs_merge_strategy_with_state = "shallow"
 }
 
-# subnet is a dependenct of vpc, mak
+# subnet is a dependenct of vpc, making vpc a 'grand-dependency', all that will be sorted though by the dependency graph
 dependency "subnet" {
   config_path = "../../subnet"
   mock_outputs_allowed_terraform_commands = ["validate,plan"]
