@@ -7,7 +7,7 @@ terraform {
 }
 
 inputs = {
-  instance_type               = "t3.nano"
+  instance_type               = "t3.small"
   vpc_id                      = dependency.vpc.outputs.vpc_id
   security_groups             = [dependency.security_group.outputs.sg_id]
   subnet_id                   = dependency.subnet.outputs.public_subnet_ids[0]
