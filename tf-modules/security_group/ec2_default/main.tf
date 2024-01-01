@@ -41,9 +41,9 @@ module "ec2-default-security-group" {
       from_port   = 443
       to_port     = 443
       protocol    = "tcp"
-      cidr_blocks = []
-      self        = true
-      description = "Allow HTTPS from inside the security group"
+      cidr_blocks = ["0.0.0.0/0"]
+      self        = null
+      description = "Allow HTTPS from everywhere"
     }
   ]
 }
