@@ -7,11 +7,12 @@ terraform {
 }
 
 inputs = {
-  instance_type               = "t3.nano"
+  instance_type               = "t3.small"
   vpc_id                      = dependency.vpc.outputs.vpc_id
   security_groups             = [dependency.security_group.outputs.sg_id]
   subnet_id                   = dependency.subnet.outputs.public_subnet_ids[0]
   ssh_key_pair                = dependency.key_pair.outputs.key_name
+  user_data                   = filebase64("scripts/bootstrap.sh")
 }
 
 dependency "vpc" {
@@ -37,7 +38,7 @@ dependency "subnet" {
 }
 
 dependency "security_group" {
-  config_path = "../../security_group/ec2_default"
+  config_path = "../security_group"
   mock_outputs_allowed_terraform_commands = ["validate,plan"]
   mock_outputs = {
     sg_id = "fake-sg-id"
@@ -47,7 +48,7 @@ dependency "security_group" {
 }
 
 dependency "key_pair" {
-  config_path = "../../key_pair"
+  config_path = "../key_pair"
   mock_outputs_allowed_terraform_commands = ["validate,plan"]
   mock_outputs = {
     key_name = "fake-key-name"

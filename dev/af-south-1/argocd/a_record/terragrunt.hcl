@@ -13,7 +13,7 @@ inputs = {
 }
 
 dependency "hosted_zone" {
-  config_path = "../../route53_hosted_zone/test"
+  config_path = "../route53_hosted_zone"
   mock_outputs_allowed_terraform_commands = ["validate,plan"]
   mock_outputs = {
     zone_id = "fake-zone-id"
@@ -28,7 +28,7 @@ dependency "hosted_zone" {
 
 
 dependency "ec2" {
-  config_path = "../../ec2/test"
+  config_path = "../ec2"
   mock_outputs_allowed_terraform_commands = ["validate,plan"]
   mock_outputs = {
     ec2_id = "fake-ec2-id"

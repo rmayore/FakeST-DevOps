@@ -1,4 +1,3 @@
-app_name = "fake-st"
 namespace = "fake-st"
 stage = "dev"
 parent_zone = "fake-st.com"

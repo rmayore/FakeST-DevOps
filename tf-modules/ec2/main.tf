@@ -15,4 +15,5 @@ module "ec2" {
   security_groups             = var.security_groups
   subnet                      = var.subnet_id
   associate_public_ip_address = true  # will create and assign EIP
+  user_data_base64            = var.user_data
 }

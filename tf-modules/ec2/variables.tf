@@ -32,3 +32,8 @@ variable "ssh_key_pair" {
   type        = string
   description = "SSH Key Pair Name"
 }
+variable "user_data" {
+  type        = string
+  default     = null
+  description = "User-Data Base64 encoded binary"
+}
