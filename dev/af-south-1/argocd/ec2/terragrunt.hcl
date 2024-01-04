@@ -12,6 +12,7 @@ inputs = {
   security_groups             = [dependency.security_group.outputs.sg_id]
   subnet_id                   = dependency.subnet.outputs.public_subnet_ids[0]
   ssh_key_pair                = dependency.key_pair.outputs.key_name
+  user_data                   = filebase64("scripts/bootstrap.sh")
 }
 
 dependency "vpc" {
