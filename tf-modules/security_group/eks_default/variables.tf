@@ -10,7 +10,13 @@ variable "stage" {
   type        = string
   description = "Stage"
 }
-variable "ipv4_primary_cidr_block" {
+
+variable "vpc_id" {
   type        = string
-  description = "CIDR Block For VPC"
+  description = "VPC ID"
+}
+
+variable "cluster_name" {
+  type        = string
+  description = "Name of EKS Cluster"
 }

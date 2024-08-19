@@ -8,6 +8,6 @@ module "vpc" {
   name      = "${var.app_name}-vpc"
 
   internet_gateway_enabled         = true
-  ipv4_primary_cidr_block          = "10.0.0.0/16"
+  ipv4_primary_cidr_block          = var.ipv4_primary_cidr_block
   assign_generated_ipv6_cidr_block = true
 }
