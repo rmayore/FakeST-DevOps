@@ -17,7 +17,7 @@ inputs = {
 
 
 dependency "cluster" {
-  config_path = "../../eks/cluster"
+  config_path = "../../cluster"
   mock_outputs_allowed_terraform_commands = ["validate,plan"]
   mock_outputs = {
     cluster_name = "fake-cluster-name"
