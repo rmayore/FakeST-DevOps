@@ -3,7 +3,7 @@ include {
 }
 
 terraform {
-  source = "${get_parent_terragrunt_dir()}/tf-modules/aws_s3_bucket///"
+  source = "${get_parent_terragrunt_dir()}/tf-modules/s3/alb_bucket///"
 }
 
 inputs = {
