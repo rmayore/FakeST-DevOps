@@ -8,5 +8,5 @@ terraform {
 
 
 inputs = {
-  ipv4_primary_cidr_block   = "10.1.0.0/24"
+  ipv4_primary_cidr_block   = "10.1.0.0/18"
 }
