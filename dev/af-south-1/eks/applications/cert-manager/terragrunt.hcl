@@ -10,8 +10,7 @@ inputs = {
   cluster_name           = dependency.cluster.outputs.cluster_name
   cluster_endpoint       = dependency.cluster.outputs.cluster_endpoint
   cluster_ca_certificate = dependency.cluster.outputs.cluster_ca_certificate
-  chart_name             = "cert-manager"
-  chart_version          = "1.13.3"
+  cluster_issuer_name    = "cert-manager-cluster-issuer"
 }
 
 

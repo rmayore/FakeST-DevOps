@@ -1,4 +1,9 @@
-output "chart_name" {
-  description = "Helm Chart Details"
-  value       = "${var.chart_name}-${var.chart_version}"
+output "certificates" {
+  description = "Issued Certificates"
+  value       =  module.cert_manager.certificates
+}
+
+output "cluster_issuer_name" {
+  description = "Cluster Issuer Name"
+  value       = module.cert_manager.cluster_issuer_name
 }

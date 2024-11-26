@@ -11,11 +11,20 @@ variable "cluster_ca_certificate" {
   description = "CA Certificate Of The Cluster"
 }
 
-variable "chart_name" {
+variable "email" {
   type        = string
-  description = "Name Of The Chart Installation"
+  description = "Name Of The Cluster Issuer Email"
 }
-variable "chart_version" {
+variable "cluster_issuer_name" {
   type        = string
-  description = "Version Of The Helm Chart To Install"
+  description = "Name Of The Cluster Issuer Name"
+}
+
+variable "aws_region" {
+  type        = string
+  description = "AWS Region"
+}
+variable "parent_zone" {
+  type        = string
+  description = "Parent DNS Zone"
 }
