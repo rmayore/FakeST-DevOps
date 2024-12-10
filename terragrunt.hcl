@@ -27,6 +27,11 @@ generate "providers" {
   path = "providers.tf"
   if_exists = "overwrite_terragrunt"
   contents = <<EOF
+    provider "aws" {
+        ignore_tags {
+          key_prefixes = ["kubernetes.io/"]
+        }
+      }
     terraform {
       required_providers {
         aws = {

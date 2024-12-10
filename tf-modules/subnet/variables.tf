@@ -27,3 +27,7 @@ variable "availability_zones" {
   type        = set(string)
   description = "AWS Availability Zones For Region"
 }
+variable "cluster_name" {
+  type        = string
+  description = "Cluster Provisioned Under Dev"
+}
