@@ -15,6 +15,8 @@ module "alb" {
   access_logs_enabled                     = true
   access_logs_s3_bucket_id                = var.alb_logs_bucket_id
 
+  default_target_group_enabled            = true
+  target_group_target_type                = "ip"
   target_group_name                       = "${var.app_name}-alb-default-tg"
 
   tags = {
