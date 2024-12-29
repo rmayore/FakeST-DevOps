@@ -8,8 +8,8 @@ variable "cluster_oidc_provider_arn" {
   description = "CLuster OIDC Provider"
 }
 
-variable "attach_load_balancer_controller_policy" {
+variable "attach_ebs_csi_policy" {
   type        = bool
   default     = true
-  description = "Attach LB Controller Policy to this service Account"
+  description = "Attach EBS CSI Policy to this Service Account"
 }

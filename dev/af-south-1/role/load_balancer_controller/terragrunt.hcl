@@ -8,8 +8,9 @@ terraform {
 }
 
 inputs = {
-  cluster_name                        = dependency.cluster.outputs.cluster_name
-  cluster_oidc_provider_arn           = dependency.cluster.outputs.cluster_oidc_provider_arn
+  cluster_name                           = dependency.cluster.outputs.cluster_name
+  cluster_oidc_provider_arn              = dependency.cluster.outputs.cluster_oidc_provider_arn
+  attach_load_balancer_controller_policy = true
 }
 
 

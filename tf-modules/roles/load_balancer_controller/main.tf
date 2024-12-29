@@ -4,7 +4,7 @@ module "elb_controller_irsa_role" {
   source    = "terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks"
   role_name = "${var.cluster_name}_elb_controller_role"
 
-  attach_load_balancer_controller_policy = true
+  attach_load_balancer_controller_policy = var.attach_load_balancer_controller_policy
 
   oidc_providers = {
     main = {

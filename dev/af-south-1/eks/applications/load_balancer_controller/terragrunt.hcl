@@ -13,7 +13,7 @@ inputs = {
   cluster_ca_certificate  = dependency.cluster.outputs.cluster_ca_certificate
   chart_name              = "load-balancer-controller"
   chart_version           = "1.8.2"
-  elb_controller_role_arn = dependency.roles.outputs.elb_controller_role_arn
+  elb_controller_role_arn = dependency.load_balancer_controller_role.outputs.role_arn
 }
 
 
@@ -29,13 +29,13 @@ dependency "cluster" {
   mock_outputs_merge_strategy_with_state = "shallow"
 }
 
-dependency "roles" {
-  config_path = "../../../role/elb_controller"
+dependency "load_balancer_controller_role" {
+  config_path = "../../../role/load_balancer_controller"
   mock_outputs_allowed_terraform_commands = ["validate,plan"]
   mock_outputs = {
-    elb_controller_role_id = "fake-elb-controller-role-id"
-    elb_controller_role_arn = "fake-elb-controller-role-arn"
-    elb_controller_role_name = "fake-elb-controller-role-name"
+    role_id = "fake-elb-controller-role-id"
+    role_arn = "fake-elb-controller-role-arn"
+    role_name = "fake-elb-controller-role-name"
   }
   mock_outputs_merge_strategy_with_state = "shallow"
 }
