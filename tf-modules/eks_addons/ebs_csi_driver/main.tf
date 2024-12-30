@@ -19,6 +19,19 @@ resource "aws_eks_addon" "aws_ebs_csi_driver" {
 
   service_account_role_arn = var.service_account_role_arn
 
+  configuration_values = jsonencode({
+    controller = {
+      tolerations : [
+        {
+          key : "system",
+          operator : "Equal",
+          value : "owned",
+          effect : "NoSchedule"
+        }
+      ]
+    }
+  })
+
   preserve = true
 
   tags = {

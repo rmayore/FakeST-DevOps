@@ -7,7 +7,7 @@ terraform {
 }
 
 inputs = {
-  name                    = "auto-ebs-sc"
+  name                    = "gp3"
   type                    = "gp3"
   encrypted               = true
   cluster_name            = dependency.cluster.outputs.cluster_name

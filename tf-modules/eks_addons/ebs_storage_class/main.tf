@@ -18,7 +18,7 @@ resource "kubernetes_manifest" "gp3-storage-class" {
         "storageclass.kubernetes.io/is-default-class" = "true"
       }
     }
-    "provisioner" = "ebs.csi.eks.amazonaws.com"
+    "provisioner" = "ebs.csi.aws.com"
     "volumeBindingMode" = "WaitForFirstConsumer"
     "parameters" = {
       "type" = var.type

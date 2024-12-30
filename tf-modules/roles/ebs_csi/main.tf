@@ -9,7 +9,7 @@ module "elb_ebs_csi_role" {
   oidc_providers = {
     main = {
       provider_arn               = var.cluster_oidc_provider_arn
-      namespace_service_accounts = ["kube-system:aws-ebs-csi-driver"]
+      namespace_service_accounts = ["kube-system:aws-ebs-csi-driver","kube-system:ebs-csi-controller-sa"]
     }
   }
 }
