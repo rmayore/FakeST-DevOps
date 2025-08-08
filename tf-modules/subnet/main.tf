@@ -14,14 +14,14 @@ module "subnet" {
   nat_instance_enabled            = false
   nat_gateway_enabled             = false
 
-  public_subnets_additional_tags  = {
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/elb" = "1"
-  }
-  private_subnets_additional_tags = {
-    "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-    "kubernetes.io/role/internal-elb" = "1"
-  }
+  # public_subnets_additional_tags  = {
+  #   "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+  #   "kubernetes.io/role/elb" = "1"
+  # }
+  # private_subnets_additional_tags = {
+  #   "kubernetes.io/cluster/${var.cluster_name}" = "shared"
+  #   "kubernetes.io/role/internal-elb" = "1"
+  # }
 }
 
 
